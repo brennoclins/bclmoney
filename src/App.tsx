@@ -7,6 +7,7 @@ import Modal from 'react-modal';
 
 import { GlobalStyle } from "./styles/global";
 import { NewTransactionModal } from "./components/NewTransactionModal";
+import { TransactionsProvider } from "./TransactionsContext";
 
 // para acessibilidade
 Modal.setAppElement('#root');
@@ -23,7 +24,7 @@ export function App() {
   }
   
   return (
-    <>
+    <TransactionsProvider>
       <Header onOpenNelTransactionModal={handleOpenNewTransactionModal}/>
       <Dashboard />
 
@@ -33,6 +34,6 @@ export function App() {
       />
 
       <GlobalStyle />
-    </>
+    </TransactionsProvider>
   );
 }
