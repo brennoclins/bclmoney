@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     --red: #e52e40;
     --blue: #1061ec;
     --blue-light: #1071ec;
-    --green: #1bb100;
+    --green: #006600;
     --white: #fff;
 
     --button-active: #1ba119;

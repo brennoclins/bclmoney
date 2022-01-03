@@ -55,37 +55,59 @@ export const TransactionTypeContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
+`;
 
-  button {
-    height: 4rem;
-    border: 1px solid #d7d7d7;
-    border-radius: 0.25rem;
-    background: transparent;
+interface RadioBoxProps {
+  isActive: boolean;
+  activeColor: 'green' | 'red';
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+const colors = {
+  green: '#b3ffb3',
+  red: '#ffcccc'
+}
 
-    transition: border-color 0.2s;
+const clickColors = {
+  green: '#80ff80',
+  red: '#ff9999'
+}
 
-    &:hover {
-      border-color: var(--button-border);
-    }
+export const RadioBox = styled.button<RadioBoxProps>`
+  height: 4rem;
+  border: 1px solid #d7d7d7;
+  border-radius: 0.25rem;
+  
+  background: ${(props) => props.isActive 
+    ? colors[props.activeColor] 
+    : 'transparent'
+  };
 
-    &:active {
-      background: var(--button-active);
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    img {
-      width: 20px;
-      height: 20px;
-    }
+  transition: border-color 0.2s;
 
-    span {
-      display: inline-block;
-      margin-left: 1rem;
-      font-size: 1rem;
-      color: var(--text-title);
-    }
+  &:hover {
+    box-shadow: 1px 1px 1px #8d8f8a;
+  }
+
+  &:active {
+    background: ${(props) => props.isActive 
+    && clickColors[props.activeColor]};
+
+    box-shadow: none;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  span {
+    display: inline-block;
+    margin-left: 1rem;
+    font-size: 1rem;
+    color: var(--text-title);
   }
 `;
