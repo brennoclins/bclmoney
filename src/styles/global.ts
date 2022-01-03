@@ -13,6 +13,9 @@ export const GlobalStyle = createGlobalStyle`
     --blue-light: #1071ec;
     --green: #1bb100;
     --white: #fff;
+
+    --button-active: #1ba119;
+    --button-border: #1ba100;
   }
 
   * {
