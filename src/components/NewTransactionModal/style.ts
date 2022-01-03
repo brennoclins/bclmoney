@@ -91,14 +91,7 @@ export const RadioBox = styled.button<RadioBoxProps>`
   &:hover {
     box-shadow: 1px 1px 1px #8d8f8a;
   }
-
-  &:active {
-    background: ${(props) => props.isActive 
-    && clickColors[props.activeColor]};
-
-    box-shadow: none;
-  }
-
+  
   img {
     width: 20px;
     height: 20px;

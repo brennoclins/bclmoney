@@ -23,15 +23,22 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
 
   const [type, setType] = useState('deposit');
 
-  function handleCreateNewTransaction(event: FormEvent) {
+  async function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault();
 
-    createTransaction({
+    await createTransaction({
       title,
       amount,
       category,
       type,
-    })
+    });
+
+    setTitle('');
+    setAmount(0);
+    setCategory('');
+    setType('deposit');
+
+    onRequestClose();
   }
 
   return (
@@ -78,8 +85,8 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
 
           <RadioBox 
             type='button'
-            onClick={() => { setType('withdrawl'); }}
-            isActive={type === 'withdrawl'}
+            onClick={() => { setType('withdrawal'); }}
+            isActive={type === 'withdrawal'}
             activeColor="red"
           >
             <img src={outcomeImg} alt="Saída" />

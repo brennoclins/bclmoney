@@ -14,6 +14,11 @@ export const GlobalStyle = createGlobalStyle`
     --green: #006600;
     --white: #fff;
 
+    --orange: #e58947;
+    --orangew-light: #fab685;
+    --silver: #565d67;
+    --black: #26292e;
+
     --button-active: #1ba119;
     --button-border: #1ba100;
   }
